@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "AI Embedding API - Module 5",
+    "description": "Collection for AI Embedding API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Build Embedding from Text",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/ai/embedding?message={{message}}",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "embedding"
+          ],
+          "query": [
+            {
+              "key": "message",
+              "value": "Tell me a joke",
+              "description": "Message to embed"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Build Embedding from PDF File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/ai/upload-embedding",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "upload-embedding"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Build and Store Embedding from Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "Sample document content"
+        },
+        "url": {
+          "raw": "http://localhost:8080/ai/embedding",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "embedding"
+          ],
+          "query": []
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Build and Store Embedding from PDF File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/ai/upload-embedding",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "upload-embedding"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search for Closest Embeddings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/ai/embedding/search?message={{message}}",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "embedding",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "message",
+              "value": "prompt engineering",
+              "description": "Message to search"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Dimensions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/ai/dimensions",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "ai",
+            "dimensions"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
